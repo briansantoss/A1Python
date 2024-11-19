@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 
 
@@ -18,4 +18,4 @@ def register(request):
     user = User.objects.create_user(username=username, email=email, password=senha)
     user.save()
 
-    return render(request, 'login/login.html')
+    return redirect('login')
