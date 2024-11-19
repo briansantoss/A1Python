@@ -1,0 +1,32 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>OneTemp - Register</title>
+    <link rel="stylesheet" href="{% static 'global.css' %}">
+</head>
+<body>
+    <nav>
+       <div class="home">
+           <a style="text-decoration: none" href="http://127.0.0.1:8000/">    <h1 style="color: #ff6a00; padding: 32px">1TEMP</h1>  </a>
+       </div>
+    </nav>
+    <div class="container">
+        <h2>REGISTER</h2>
+        <form action="{% url 'register' %}" method="POST"> {% csrf_token %}
+            <input type="text" placeholder="Nome" name ="username" required>
+            <input type="email" placeholder="Email" name ="email" required>
+            <input type="password" placeholder="Senha" name ="senha" required>
+            <input type="submit" value="Cadastrar">
+            <p style="font-size: 14px; text-align: center">Já tem uma conta?  <a href="http://127.0.0.1:8000/login/">Entrar</a></p>
+        </form>
+    </div>
+    <script>
+        {% if usuario_existe %}
+            alert("Esse usuário já se encontra cadastrado em nosso sistema")
+        {% endif %}
+    </script>
+</body>
+</html>

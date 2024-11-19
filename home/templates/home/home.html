@@ -1,0 +1,18 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title> OneTemp </title>
+    <link rel="stylesheet" href="{% static 'global.css' %}">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="{% url 'login' %}" ><strong>LOGIN</strong></a>
+            <a href="{% url 'register' %}"><strong>REGISTER</strong></a>
+        </nav>
+    </header>
+</body>
+</html>
