@@ -3,6 +3,6 @@ from django.shortcuts import render
 
 
 @login_required(login_url='login')
-def datapanel(request):
+def data_panel(request):
     if request.method == 'GET':
-        return render(request, 'datapanel/datapanel.html')
+        return render(request, 'data_panel/data_panel.html')
