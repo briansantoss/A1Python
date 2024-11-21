@@ -1,3 +1,4 @@
+import csv
 from shutil import rmtree
 import pandas as pd
 from django.contrib.auth.decorators import login_required
@@ -27,8 +28,11 @@ def data_panel(request):
     # Lendo o arquivo de dataset recebido
     file_path = settings.MEDIA_ROOT / filename
 
-    df_input = pd.read_csv(file_path, sep=',')
+    try:
+        df_input = pd.read_csv(file_path, sep=',', quotechar='"')
+    except pd.errors.ParserError:
+        return render(request, 'data_panel/data_panel.html', {'invalid_csv'})
 
     if not df.columns.equals(df_input.columns):
-        return render(request, 'data_panel/data_panel.html', {'invalidCSV': True})
+        return render(request, 'data_panel/data_panel.html', {'invalid_csv': True})
     return render(request, 'data_panel/data_panel.html')
