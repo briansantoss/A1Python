@@ -115,6 +115,10 @@ USE_I18N = True
 
 USE_TZ = True
 
+# Diretórios de datasets enviados
+
+MEDIA_URL = '/client_data/'
+MEDIA_ROOT = BASE_DIR / 'client_data'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
@@ -124,6 +128,12 @@ STATIC_URL = 'static/'
 STATICFILES_DIRS = [
     BASE_DIR / "static",
 ]
+
+# Construindo o caminho para o dataset padrão
+
+DATA_DIR = STATICFILES_DIRS[0] / 'data'
+DEF_DATASET = DATA_DIR / 'default_dataset.csv'
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
