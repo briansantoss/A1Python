@@ -80,6 +80,9 @@
         <h4 style="color: blue"> 0 = SOL, 1 = GAROA, 2 = CHUVA, 3 = NEVOA, 4 = NEVE</h4>
         <img src="{% static 'py.png' %}" alt="grafico">
     </article>
+    {% if acuracia_final %}
+        <p>Acurácia final: {{ acuracia_final }}</p>
+    {% endif %}
     <footer>
         <h4> website by Os guri da WEB</h4>
     </footer>
