@@ -1,0 +1,85 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title> OneTemp </title>
+    <link rel="stylesheet" href="{% static 'global.css' %}">
+    <style>
+        section{
+            width: 100%;
+            height: 600px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: #e7d8ce;    /* #d8d8d2 */
+        }
+        article{
+            width: 100%;
+            height: 400px;
+            background-image: url("{% static 'home.png' %}"); /* imagem para deixar o home com mais detalhes*/
+            background-position: center;
+            background-size: cover;
+            background-color: #e7d8ce;
+        }
+        
+        footer{
+            width: 100%;
+            height: 40px;
+            text-align: center;
+            padding-top: 10px;
+            background-color: #e7d8ce;
+            font-size: 20px;
+        }
+
+        h2{
+            font-size: 70px;
+        }
+
+        h3{
+            font-size: 30px;
+            margin-bottom: 20px;
+        }
+
+        a{
+            width: 140px;
+            background-color: #df7c0b;
+            display: inline-block;
+            margin: 10px;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-size: 20px;
+            color: white;
+            border-radius: 8px;
+
+        }
+
+        a:hover{
+        background-color: rgb(221, 146, 7);
+        }
+        
+    </style>
+</head>
+
+<body>
+  <header>
+        <h1> 1TEMP </h1>
+    </header>
+    <section>
+        <h2> Com sol ou com chuva a OneTemp está com você! </h2>
+        <h3> Faça login ou registre-se para verificar os dados climaticos </h3>
+        <div class="center">
+            <a href="{% url 'login' %}" ><strong>LOGIN</strong></a>
+            <a href="{% url 'register' %}"><strong>REGISTER</strong></a>
+        </div>
+    </section>
+    <article>
+    </article>
+    <footer>
+        <h4> website by Os guri da WEB</h4>
+    </footer>
+</body>
+</html>

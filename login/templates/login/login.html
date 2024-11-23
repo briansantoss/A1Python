@@ -1,0 +1,35 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title> OneTemp - Login </title>
+    <link rel="stylesheet" href="{% static 'global.css' %}">
+<style>
+
+
+    </style>
+</head>
+<body>
+   <nav>
+       <div class="home">
+            <a style="text-decoration: none" href="http://127.0.0.1:8000/">    <h1 style="color: #ff6a00; padding: 32px">1TEMP</h1>  </a>
+       </div>
+    </nav>
+    <div class="container">
+        <h2>LOGIN</h2>
+        <form action="{% url 'login' %}" method="POST">{% csrf_token %}
+            <input type="text" placeholder="Nome" name ="username" required>
+            <input type="password" placeholder="Senha" name ="senha" required>
+            <input type="submit" value="Entrar">
+            <p style="font-size: 14px; text-align: center">Não possui uma conta? <a href="http://127.0.0.1:8000/register/">Cadastre-se</a></p>
+        </form>
+    </div>
+    <script>
+        {% if erro_login %}
+            alert('Nome de usuário ou senha incorretos. Tente novamente')
+        {% endif %}
+    </script>
+</body>
+</html>
