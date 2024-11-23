@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'register',
     'login',
     'datapanel',
+    'file',
+    'graphic',
 ]
 
 MIDDLEWARE = [

@@ -4,7 +4,7 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title> OneTemp - Dados & Previsões </title>
+    <title> OneTemp - Graficos </title>
     <link rel="stylesheet" href="{% static 'global.css' %}">
     <style>
         section{
@@ -67,14 +67,10 @@
 
 <body>
   <header>
-        <h1> 1TEMP </h1>
+        <h1> 1TEMP</h1>
     </header>
     <section>
-        <h2> Olá, seja bem vindo novamente!</h2>
-        <div class="center">
-            <h3> Deseja enviar os dados da sua região para ter mais informação?</h3>
-            <a href="{% url 'file' %}" ><strong>Importar CSV</strong></a>
-        </div>
+        <h2> Graficos com base no arquivo CSV</h2>
     </section>
     <article>
         <h4 style="color: blue"> 0 = SOL, 1 = GAROA, 2 = CHUVA, 3 = NEVOA, 4 = NEVE</h4>
